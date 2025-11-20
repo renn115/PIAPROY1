@@ -187,7 +187,7 @@ export default function Orientador() {
                       <td className="px-6 py-4 whitespace-nowrap text-sm space-x-2">
                         <button
                           onClick={() => generarScoring(caso)}
-                          className="inline-flex items-center gap-1 bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition"
+                          className="inline-flex items-center gap-1 bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-600 transition"
                         >
                           <TrendingUp className="w-4 h-4" />
                           Generar scoring

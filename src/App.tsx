@@ -1,3 +1,4 @@
+import React from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './components/Login';
 import Docente from './components/Docente';
@@ -8,7 +9,9 @@ function AppContent() {
   const { usuario } = useAuth();
 
   if (!usuario) {
-    return <Login />;
+    return (
+      <Login />
+    );
   }
 
   if (usuario.rol === 'docente') {
@@ -33,3 +36,4 @@ export default function App() {
     </AuthProvider>
   );
 }
+

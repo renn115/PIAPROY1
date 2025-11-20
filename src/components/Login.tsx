@@ -32,20 +32,41 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100">
-      <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-100">
+  {/* Figuras decorativas */}
+  <div className="absolute w-40 h-40 bg-blue-600 rounded-full bottom-10 left-10 opacity-90 shadow-lg" />
+  <div className="absolute w-24 h-24 bg-pink-500 rotate-12 top-40 right-32 shadow-lg" />
+  <div className="absolute w-20 h-20 bg-orange-500 rotate-12 bottom-70 left-40 shadow-lg" />
+  
+  <div
+  className="absolute w-0 h-0
+  border-l-[40px] border-l-transparent
+  border-r-[30px] border-r-transparent
+  border-b-[70px] border-b-green-400
+  top-80 right-20 rotate-3"
+/>
+
+  <div className="absolute w-0 h-0 
+      border-l-[60px] border-l-transparent 
+      border-r-[60px] border-r-transparent 
+      border-b-[100px] border-b-yellow-400 
+      top-20 left-1/3 rotate-6" />
+
+  {/*contenedor del login */}
+  <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md relative z-10">
+
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-indigo-100 rounded-full mb-4">
-            <User className="w-10 h-10 text-indigo-600" />
+            <img src="/src/components/Brain.png" className="w-full h-full object-cover" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-800">Iniciar sesión</h2>
-          <p className="text-gray-500 mt-2 text-sm">Plataforma Académica de Simulación NEE</p>
+          <h2 className="text-3xl font-bold text-gray-800">NeuroEDU</h2>
+          <p className="text-gray-500 mt-2 text-sm">Iniciar Sesión para continuar</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-              Correo institucional
+              Correo electrónico
             </label>
             <input
               type="email"
@@ -53,7 +74,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-              placeholder="tu@ejemplo.edu"
+              placeholder="usuario@gmail.com"
               required
             />
           </div>

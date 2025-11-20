@@ -9,7 +9,7 @@ export default function Header({ title }: HeaderProps) {
   const { usuario, logout } = useAuth();
 
   return (
-    <header className="bg-indigo-600 text-white py-4 shadow-lg">
+    <header className="bg-indigo-600 text-white py-7 shadow-lg">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div>
           <h1 className="text-xl font-bold">{title}</h1>

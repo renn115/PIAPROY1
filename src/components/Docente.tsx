@@ -252,7 +252,7 @@ export default function Docente() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
                   {loading ? 'Enviando...' : 'Enviar observación'}
