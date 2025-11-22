@@ -18,6 +18,8 @@ export interface Estudiante {
   id: string;
   nombre: string;
   grupo: string;
+  edad?: number;
+  entorno_familiar?: string;
   created_at: string;
 }
 
@@ -30,6 +32,7 @@ export interface Observacion {
   interaccion_social: number;
   seguimiento_instrucciones: number;
   concentracion: number;
+  fecha_observacion?: string;
   created_at: string;
   estudiante?: Estudiante;
   docente?: Usuario;
@@ -44,6 +47,58 @@ export interface Scoring {
   detalles: Record<string, unknown>;
   created_at: string;
   estudiante?: Estudiante;
+}
+
+export interface ComentarioOrientador {
+  id: string;
+  estudiante_id: string;
+  orientador_id: string;
+  comentario: string;
+  created_at: string;
+  estudiante?: Estudiante;
+  orientador?: Usuario;
+  respuestas?: RespuestaComentario[];
+}
+
+export interface RespuestaComentario {
+  id: string;
+  comentario_id: string;
+  usuario_id: string;
+  respuesta: string;
+  created_at: string;
+  usuario?: Usuario;
+}
+
+export interface MejoraDocente {
+  id: string;
+  estudiante_id: string;
+  docente_id: string;
+  fecha: string;
+  mejora: string;
+  created_at: string;
+  estudiante?: Estudiante;
+  docente?: Usuario;
+}
+
+export interface LogEliminacion {
+  id: string;
+  estudiante_nombre: string;
+  estudiante_grupo?: string;
+  docente_id?: string;
+  docente_nombre?: string;
+  created_at: string;
+}
+
+export interface CasoSeguimiento {
+  id: string;
+  estudiante_id: string;
+  orientador_id: string;
+  estado: 'abierto' | 'en_seguimiento' | 'cerrado';
+  observaciones?: string;
+  created_at: string;
+  updated_at: string;
+  estudiante?: Estudiante;
+  orientador?: Usuario;
 }
 
 export async function loginUser(email: string, password: string): Promise<Usuario | null> {
